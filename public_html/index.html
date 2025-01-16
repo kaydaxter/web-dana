@@ -1,32 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Website - Dana de Valencia</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portal Privado Voluntarios - DANA Valencia</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .status-banner {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #1a73e8;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 0.5rem;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #1a73e8;
+        }
+
+        .urgent {
+            border-left-color: #dc3545 !important;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background: #e9ecef;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1rem;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Main Website - Dana de Valencia</h1>
-        <nav>
-            <ul>
-                <li><a href="../back_office/index.html">Intranet</a></li>
-                <li><a href="privat/index.html">Volunteer Site</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="news">
-            <h2>News and Updates</h2>
-            <article>
-                <h3>Latest News</h3>
-                <p>Stay tuned for the latest news and updates from Dana de Valencia.</p>
-            </article>
-        </section>
-    </main>
+    <div class="header">
+        <h1>Portal de Voluntarios DANA Valencia</h1>
+        <p>Área privada para coordinación y recursos</p>
+    </div>
+
+    <div class="status-banner">
+        Estado: EN SERVICIO ACTIVO - Turno actual: MAÑANA (08:00 - 14:00)
+    </div>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">47</div>
+                <div>Voluntarios Activos</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">12</div>
+                <div>Zonas Asignadas</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">156</div>
+                <div>Personas Asistidas Hoy</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">89%</div>
+                <div>Tareas Completadas</div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Tareas Urgentes</h3>
+                <ul class="task-list">
+                    <li class="urgent">
+                        <strong>PRIORITARIO:</strong> Distribución de agua potable en Barrio del Carmen
+                        <br>
+                        <small>Asignado a: Equipo A - Estado: En Proceso</small>
+                    </li>
+                    <li class="urgent">
+                        <strong>INMEDIATO:</strong> Evacuación asistida en Calle Mayor, 23
+                        <br>
+                        <small>Requiere: 4 voluntarios - Urgente</small>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Zonas de Actuación</h3>
+                <div class="map-container">
+                    [Mapa de zonas asignadas]
+                </div>
+                <ul class="task-list">
+                    <li>Zona Norte: Distrito Marítimo - 8 voluntarios</li>
+                    <li>Zona Centro: Ciutat Vella - 12 voluntarios</li>
+                    <li>Zona Sur: Quatre Carreres - 6 voluntarios</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Recursos Disponibles</h3>
+                <ul class="task-list">
+                    <li>Almacén Central: 200 litros agua, 150 mantas</li>
+                    <li>Vehículos: 3 furgonetas disponibles</li>
+                    <li>Material de limpieza: Stock completo</li>
+                    <li>Alimentos no perecederos: Nivel medio</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Próximos Turnos</h3>
+                <ul class="task-list">
+                    <li>
+                        <strong>Mañana (08:00-14:00):</strong> 15 voluntarios
+                        <br>
+                        <small>Coordinador: Ana Martínez</small>
+                    </li>
+                    <li>
+                        <strong>Tarde (14:00-20:00):</strong> 18 voluntarios
+                        <br>
+                        <small>Coordinador: Carlos Ruiz</small>
+                    </li>
+                    <li>
+                        <strong>Noche (20:00-02:00):</strong> 12 voluntarios
+                        <br>
+                        <small>Coordinador: Isabel García</small>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Comunicaciones</h3>
+                <ul class="task-list">
+                    <li>
+                        <strong>ACTUALIZACIÓN 10:15</strong>
+                        <br>
+                        Nueva zona afectada en Benimaclet. Se necesitan voluntarios.
+                    </li>
+                    <li>
+                        <strong>AVISO 09:30</strong>
+                        <br>
+                        Previsión de lluvia para esta tarde. Preparar equipos.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Contactos de Emergencia</h3>
+                <ul class="task-list">
+                    <li>Coordinador General: 666-XXX-XXX</li>
+                    <li>Protección Civil: 96X-XXX-XXX</li>
+                    <li>Centro de Control: 96X-XXX-XXX</li>
+                    <li>Emergencias Médicas: 112</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2023 Dana de Valencia. All rights reserved.</p>
+        <p>Portal Privado de Voluntarios DANA Valencia - Acceso Restringido</p>
+        <p>En caso de emergencia: 112 | Coordinación: 96X-XXX-XXX</p>
     </footer>
 </body>
 </html>
